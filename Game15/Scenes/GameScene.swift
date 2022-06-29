@@ -17,13 +17,13 @@ class GameScene: SKScene {
     fileprivate let screenSize = UIScreen.main.bounds.size
     fileprivate var num = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"].shuffled()
     fileprivate lazy var matrix = [[num[0],num[1],num[2],num[3]],
-                              [num[4],num[5],num[6],num[7]],
-                              [num[8],num[9],num[10],num[11]],
-                              [num[12],num[13],num[14],""]].shuffled()
+                                   [num[4],num[5],num[6],num[7]],
+                                   [num[8],num[9],num[10],num[11]],
+                                   [num[12],num[13],num[14],""]].shuffled()
     
     override func didMove(to view: SKView) {
-        self.backgroundColor = .systemCyan
-        configureMatrix(matrix: matrix, yOffset: 75)
+        self.backgroundColor = .systemYellow
+        configureMatrix(matrix: matrix, yOffset: 72)
         createHUD()
         startTimer()
     }
@@ -53,24 +53,24 @@ class GameScene: SKScene {
         for (rowIndex, row) in matrix.enumerated() {
             var cellMatrixRow = [CellNode]()
             for (colIndex, title) in row.enumerated() {
-                let button = CellNode(titled: title, backgroundColor: .lightGray)
+                let button = CellNode(titled: title, backgroundColor: .darkGray)
                 switch colIndex {
                 case 0:
-                    let xOffset = CGFloat(75 + 75 / 2)
+                    let xOffset = CGFloat(72 + 72 / 2)
                     button.position = CGPoint(x: self.frame.midX - xOffset,
-                                              y: self.frame.maxY - CGFloat(250 + yOffset * rowIndex))
+                                              y: self.frame.maxY - CGFloat(220 + yOffset * rowIndex))
                 case 1:
-                    let xOffset = CGFloat(75 / 2)
+                    let xOffset = CGFloat(72 / 2)
                     button.position = CGPoint(x: self.frame.midX - xOffset,
-                                              y: self.frame.maxY - CGFloat(250 + yOffset * rowIndex))
+                                              y: self.frame.maxY - CGFloat(220 + yOffset * rowIndex))
                 case 2:
-                    let xOffset = CGFloat(75 / 2)
+                    let xOffset = CGFloat(72 / 2)
                     button.position = CGPoint(x: self.frame.midX + xOffset,
-                                              y: self.frame.maxY - CGFloat(250 + yOffset * rowIndex))
+                                              y: self.frame.maxY - CGFloat(220 + yOffset * rowIndex))
                 case 3:
-                    let xOffset = CGFloat(75 + 75 / 2)
+                    let xOffset = CGFloat(72 + 72 / 2)
                     button.position = CGPoint(x: self.frame.midX + xOffset,
-                                              y: self.frame.maxY - CGFloat(250 + yOffset * rowIndex))
+                                              y: self.frame.maxY - CGFloat(220 + yOffset * rowIndex))
                 default:
                     break
                 }
@@ -79,7 +79,7 @@ class GameScene: SKScene {
                 button.label.name = title
                 button.location = button.position
                 if button.name == "" {
-                    button.color = .green
+                    button.color = .systemYellow
                 }
                 addChild(button)
                 cellMatrixRow.append(button)
@@ -91,7 +91,7 @@ class GameScene: SKScene {
     fileprivate func moveCell (cellIndex: (Int, Int), emptyIndex: (Int, Int)) {
         self.matrix[emptyIndex.0][emptyIndex.1] = matrix[cellIndex.0][cellIndex.1]
         self.matrix[cellIndex.0][cellIndex.1] = ""
-        configureMatrix(matrix: matrix, yOffset: 75)
+        configureMatrix(matrix: matrix, yOffset: 72)
         hud.moves += 1
     }
     

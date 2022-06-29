@@ -10,7 +10,7 @@ import SpriteKit
 class HUD: SKNode {
     let titleMovesLabel = SKLabelNode(text: "MOVES")
     
-    let movesBackground = SKSpriteNode(imageNamed: "moves")
+    let movesBackground = SKSpriteNode(color: .darkGray, size: CGSize(width: 100, height: 40))
     let movesLabel = SKLabelNode(text: "0")
     var moves: Int = 0 {
         didSet {
@@ -19,7 +19,7 @@ class HUD: SKNode {
     }
     
     let titleTimerLabel = SKLabelNode(text: "TIMER")
-    let timerBackground = SKSpriteNode(imageNamed: "timer")
+    let timerBackground = SKSpriteNode(color: .darkGray, size: CGSize(width: 100, height: 40))
     let timerLabel = SKLabelNode(text: "0")
     var timer: Int = 0 {
         didSet {
@@ -29,44 +29,51 @@ class HUD: SKNode {
     
     func configureUI(screenSize: CGSize) {
         // Score
-        titleMovesLabel.position = CGPoint(x: 105,
-                                           y: screenSize.height - 80)
+        let xMoveCoord = screenSize.width / 2 + movesBackground.size.width / 2 - 143
+        let yMoveCoord = screenSize.height - movesBackground.size.height / 2 - 90
+        titleMovesLabel.position = CGPoint(x: xMoveCoord,
+                                           y: yMoveCoord + 30)
         titleMovesLabel.fontName = "AmericanTypewriter-Bold"
-        titleMovesLabel.fontSize = 20
+        titleMovesLabel.fontColor = .darkGray
+        titleMovesLabel.fontSize = 25
         titleMovesLabel.zPosition = 10
         addChild(titleMovesLabel)
-        
-        movesBackground.position = CGPoint(x: 110,
-                                           y: screenSize.height - movesBackground.size.height / 2 - 10)
+
+        movesBackground.position = CGPoint(x: xMoveCoord,
+                                           y: yMoveCoord)
         movesBackground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        movesBackground.zPosition = 9
+        movesBackground.zPosition = 8
         addChild(movesBackground)
+        
+ 
         
         movesLabel.horizontalAlignmentMode = .center
         movesLabel.verticalAlignmentMode = .center
-        movesLabel.position = CGPoint(x: -5, y: 8)
         movesLabel.zPosition = 10
         movesLabel.fontName = "AmericanTypewriter-Bold"
         movesLabel.fontSize = 20
         movesBackground.addChild(movesLabel)
         
         // Timer
-        titleTimerLabel.position = CGPoint(x: 305,
-                                           y: screenSize.height - 80)
+        let xTimerCoord = screenSize.width / 2 - timerBackground.size.width / 2 + 143
+        let yTimerCoord = screenSize.height - timerBackground.size.height / 2 - 90
+        
+        titleTimerLabel.position = CGPoint(x: xTimerCoord,
+                                           y: yTimerCoord + 30)
         titleTimerLabel.fontName = "AmericanTypewriter-Bold"
-        titleTimerLabel.fontSize = 20
+        titleTimerLabel.fontColor = .darkGray
+        titleTimerLabel.fontSize = 25
         titleTimerLabel.zPosition = 10
         addChild(titleTimerLabel)
         
-        timerBackground.position = CGPoint(x: 310 ,
-                                           y: screenSize.height - timerBackground.size.height / 2 - 10)
+        timerBackground.position = CGPoint(x: xTimerCoord,
+                                           y: yTimerCoord)
         timerBackground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        timerBackground.zPosition = 9
+        timerBackground.zPosition = 8
         addChild(timerBackground)
         
         timerLabel.verticalAlignmentMode = .center
         timerLabel.horizontalAlignmentMode = .center
-        timerLabel.position = CGPoint(x: -5, y: 8)
         timerLabel.zPosition = 10
         timerLabel.fontName = "AmericanTypewriter-Bold"
         timerLabel.fontSize = 20
