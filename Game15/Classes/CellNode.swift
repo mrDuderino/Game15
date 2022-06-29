@@ -15,7 +15,7 @@ class CellNode: SKSpriteNode {
         let l = SKLabelNode(text: "")
         l.fontColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
         l.fontName = "AmericanTypewriter-Bold"
-        l.fontSize = 20
+        l.fontSize = 30
         l.horizontalAlignmentMode = .center
         l.verticalAlignmentMode = .center
         l.zPosition = 2

@@ -14,6 +14,7 @@
 		FB0247A92869D9890095652C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0247A72869D9890095652C /* LaunchScreen.storyboard */; };
 		FB0247B62869E3170095652C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB0247B52869E3170095652C /* Assets.xcassets */; };
 		FB0247B8286A1BCC0095652C /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0247B7286A1BCC0095652C /* CellNode.swift */; };
+		FB973EF6286B68810055A3E0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB973EF5286B68810055A3E0 /* HUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FB0247A82869D9890095652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB0247B52869E3170095652C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB0247B7286A1BCC0095652C /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
+		FB973EF5286B68810055A3E0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				FB0247B7286A1BCC0095652C /* CellNode.swift */,
+				FB973EF5286B68810055A3E0 /* HUD.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0247B8286A1BCC0095652C /* CellNode.swift in Sources */,
+				FB973EF6286B68810055A3E0 /* HUD.swift in Sources */,
 				FB02479F2869D9870095652C /* GameScene.swift in Sources */,
 				FB0247A12869D9870095652C /* GameViewController.swift in Sources */,
 				FB0247992869D9870095652C /* AppDelegate.swift in Sources */,
