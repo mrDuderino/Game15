@@ -19,15 +19,15 @@ class CellNode: SKSpriteNode {
         l.horizontalAlignmentMode = .center
         l.verticalAlignmentMode = .center
         l.zPosition = 2
-        l.name = "label"
         
         return l
     }()
-    init(titled title: String?, backgroundColor: UIColor) {
+    init(titled title: String?, backgroundColor: UIColor, size: CGSize, fontSize: CGFloat) {
         
-        super.init(texture: nil, color: backgroundColor, size: CGSize(width: 70, height: 70))
+        super.init(texture: nil, color: backgroundColor, size: size)
         if let title = title {
             label.text = title.uppercased()
+            label.fontSize = fontSize
         }
         addChild(label)
     }

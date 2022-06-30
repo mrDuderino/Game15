@@ -9,7 +9,7 @@ import SpriteKit
 import GameplayKit
 
 
-class GameScene: SKScene {
+class GameScene: ParentScene {
     
     fileprivate var selectedNode = SKNode()
     fileprivate var сellMatrix = [[CellNode]]()
@@ -20,6 +20,10 @@ class GameScene: SKScene {
                                    [num[4],num[5],num[6],num[7]],
                                    [num[8],num[9],num[10],num[11]],
                                    [num[12],num[13],num[14],""]].shuffled()
+    fileprivate var winMatrix = [["1","2","3","4"],
+                                 ["5","6","7","8"],
+                                 ["9","10","11","12"],
+                                 ["13","14","15",""]]
     
     override func didMove(to view: SKView) {
         self.backgroundColor = .systemYellow
@@ -53,7 +57,7 @@ class GameScene: SKScene {
         for (rowIndex, row) in matrix.enumerated() {
             var cellMatrixRow = [CellNode]()
             for (colIndex, title) in row.enumerated() {
-                let button = CellNode(titled: title, backgroundColor: .darkGray)
+                let button = CellNode(titled: title, backgroundColor: .darkGray, size: CGSize(width: 70, height: 70), fontSize: 30)
                 switch colIndex {
                 case 0:
                     let xOffset = CGFloat(72 + 72 / 2)
@@ -143,6 +147,21 @@ class GameScene: SKScene {
         selectedNode = node
         guard isEmptyCellAVailable(node: selectedNode) else {return}
         moveCell(cellIndex: getCellindex(node: selectedNode)!, emptyIndex: getEmptyCellIndex()!)
+    }
+    
+
+    override func update(_ currentTime: TimeInterval) {
+       // if hud.moves == 3 {
+        if matrix == winMatrix {
+            gameSettings.currentMove = hud.moves
+            gameSettings.currentTime = hud.timer
+            gameSettings.saveScores()
+            let bestScene = BestScene(size: self.size)
+            bestScene.backScene = self
+            let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
+            bestScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(bestScene, transition: transition)
+        }
     }
 }
 

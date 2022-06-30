@@ -14,6 +14,10 @@
 		FB0247A92869D9890095652C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0247A72869D9890095652C /* LaunchScreen.storyboard */; };
 		FB0247B62869E3170095652C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB0247B52869E3170095652C /* Assets.xcassets */; };
 		FB0247B8286A1BCC0095652C /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0247B7286A1BCC0095652C /* CellNode.swift */; };
+		FB6010F1286CAFD00094326A /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F0286CAFD00094326A /* BestScene.swift */; };
+		FB6010F3286CB0170094326A /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F2286CB0170094326A /* ParentScene.swift */; };
+		FB6010F5286CB0470094326A /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F4286CB0470094326A /* GameSettings.swift */; };
+		FB6010F7286CB31B0094326A /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F6286CB31B0094326A /* SceneManager.swift */; };
 		FB973EF6286B68810055A3E0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB973EF5286B68810055A3E0 /* HUD.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		FB0247A82869D9890095652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB0247B52869E3170095652C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB0247B7286A1BCC0095652C /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
+		FB6010F0286CAFD00094326A /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
+		FB6010F2286CB0170094326A /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
+		FB6010F4286CB0470094326A /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		FB6010F6286CB31B0094326A /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		FB973EF5286B68810055A3E0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				FB0247A02869D9870095652C /* GameViewController.swift */,
+				FB6010F4286CB0470094326A /* GameSettings.swift */,
+				FB6010F6286CB31B0094326A /* SceneManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -78,7 +88,9 @@
 		FB0247B22869DFAF0095652C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FB6010F2286CB0170094326A /* ParentScene.swift */,
 				FB02479E2869D9870095652C /* GameScene.swift */,
+				FB6010F0286CAFD00094326A /* BestScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -176,9 +188,13 @@
 			files = (
 				FB0247B8286A1BCC0095652C /* CellNode.swift in Sources */,
 				FB973EF6286B68810055A3E0 /* HUD.swift in Sources */,
+				FB6010F7286CB31B0094326A /* SceneManager.swift in Sources */,
+				FB6010F5286CB0470094326A /* GameSettings.swift in Sources */,
 				FB02479F2869D9870095652C /* GameScene.swift in Sources */,
+				FB6010F3286CB0170094326A /* ParentScene.swift in Sources */,
 				FB0247A12869D9870095652C /* GameViewController.swift in Sources */,
 				FB0247992869D9870095652C /* AppDelegate.swift in Sources */,
+				FB6010F1286CAFD00094326A /* BestScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
