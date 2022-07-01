@@ -27,6 +27,7 @@ class CellNode: SKSpriteNode {
         super.init(texture: nil, color: backgroundColor, size: size)
         if let title = title {
             label.text = title.uppercased()
+            label.name = title
             label.fontSize = fontSize
         }
         addChild(label)

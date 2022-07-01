@@ -10,16 +10,8 @@ import SpriteKit
 
 class MenuScene: ParentScene {
     
-    var movePlaces: [Int]!
-    var timePlaces: [Int]!
-    
     override func didMove(to view: SKView) {
-        gameSettings.loadScores()
-        movePlaces = gameSettings.highscoreMoves
-        timePlaces = gameSettings.highscoreTime
-        
-        setHeader(withName: "Game 15", color: .systemIndigo, size: CGSize(width: 270, height: 70))
-
+        setHeader(withName: "Game 15", color: .systemIndigo, size: CGSize(width: 120, height: 70))
         
         let titles = ["play", "best"]
         for (index, title) in titles.enumerated() {

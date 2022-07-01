@@ -26,6 +26,11 @@ class GameScene: ParentScene {
                                  ["13","14","15",""]]
     
     override func didMove(to view: SKView) {
+        
+        self.scene?.isPaused = false
+        guard sceneManager.gameScene == nil else { return }
+        sceneManager.gameScene = self
+        
         self.backgroundColor = .systemYellow
         configureMatrix(matrix: matrix, yOffset: 72)
         createHUD()
@@ -92,6 +97,10 @@ class GameScene: ParentScene {
         }
     }
     
+    fileprivate func populatePauseButton() {
+        
+    }
+    
     fileprivate func moveCell (cellIndex: (Int, Int), emptyIndex: (Int, Int)) {
         self.matrix[emptyIndex.0][emptyIndex.1] = matrix[cellIndex.0][cellIndex.1]
         self.matrix[cellIndex.0][cellIndex.1] = ""
@@ -137,6 +146,15 @@ class GameScene: ParentScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
+        
+        if node.name == "pause" {
+            let transition = SKTransition.doorway(withDuration: 1.0)
+            let pauseScene = PauseScene(size: self.size)
+            pauseScene.scaleMode = .aspectFill
+            sceneManager.gameScene = self
+            self.scene?.isPaused = true
+            self.scene!.view?.presentScene(pauseScene, transition: transition)
+        }
         guard node.name != nil else { return }
         selectedNode = node
         guard isEmptyCellAVailable(node: selectedNode) else {return}

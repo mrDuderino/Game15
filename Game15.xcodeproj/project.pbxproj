@@ -21,6 +21,7 @@
 		FB973EF6286B68810055A3E0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB973EF5286B68810055A3E0 /* HUD.swift */; };
 		FBF7A6AE286F07E600DDBADD /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7A6AD286F07E600DDBADD /* MenuScene.swift */; };
 		FBF7A6B0286F092B00DDBADD /* WinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7A6AF286F092B00DDBADD /* WinScene.swift */; };
+		FBF7A6B2286F169300DDBADD /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7A6B1286F169300DDBADD /* PauseScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FB973EF5286B68810055A3E0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		FBF7A6AD286F07E600DDBADD /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBF7A6AF286F092B00DDBADD /* WinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScene.swift; sourceTree = "<group>"; };
+		FBF7A6B1286F169300DDBADD /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				FB02479E2869D9870095652C /* GameScene.swift */,
 				FBF7A6AF286F092B00DDBADD /* WinScene.swift */,
 				FB6010F0286CAFD00094326A /* BestScene.swift */,
+				FBF7A6B1286F169300DDBADD /* PauseScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				FBF7A6AE286F07E600DDBADD /* MenuScene.swift in Sources */,
 				FB0247992869D9870095652C /* AppDelegate.swift in Sources */,
 				FB6010F1286CAFD00094326A /* BestScene.swift in Sources */,
+				FBF7A6B2286F169300DDBADD /* PauseScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

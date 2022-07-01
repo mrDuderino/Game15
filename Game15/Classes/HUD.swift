@@ -10,7 +10,7 @@ import SpriteKit
 class HUD: SKNode {
     let titleMovesLabel = SKLabelNode(text: "MOVES")
     
-    let movesBackground = SKSpriteNode(color: .darkGray, size: CGSize(width: 100, height: 40))
+    let movesBackground = SKSpriteNode(color: .systemIndigo, size: CGSize(width: 100, height: 40))
     let movesLabel = SKLabelNode(text: "0")
     var moves: Int = 0 {
         didSet {
@@ -19,13 +19,15 @@ class HUD: SKNode {
     }
     
     let titleTimerLabel = SKLabelNode(text: "TIMER")
-    let timerBackground = SKSpriteNode(color: .darkGray, size: CGSize(width: 100, height: 40))
+    let timerBackground = SKSpriteNode(color: .systemIndigo, size: CGSize(width: 100, height: 40))
     let timerLabel = SKLabelNode(text: "0")
     var timer: Int = 0 {
         didSet {
             timerLabel.text = timer.description
         }
     }
+    
+    let menuButton = CellNode(titled: "pause", backgroundColor: .systemIndigo, size: CGSize(width: 160, height: 70), fontSize: 30)
     
     func configureUI(screenSize: CGSize) {
         // Score
@@ -78,5 +80,12 @@ class HUD: SKNode {
         timerLabel.fontName = "AmericanTypewriter-Bold"
         timerLabel.fontSize = 20
         timerBackground.addChild(timerLabel)
+        
+        // menu
+        menuButton.position = CGPoint(x: screenSize.width / 2, y: menuButton.size.height / 2 + 50)
+        menuButton.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        menuButton.zPosition = 100
+        menuButton.name = "pause"
+        addChild(menuButton)
     }
 }
