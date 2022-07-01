@@ -33,24 +33,25 @@ class BestScene: ParentScene {
         }
     }
     
-    func showBestMoves() {
+    fileprivate func showBestMoves() {
         for (index, value) in movePlaces.enumerated() {
             let l = SKLabelNode(text: value.description)
             l.fontColor = UIColor(red: 219/255, green: 226/255, blue: 215/255, alpha: 1.0)
             l.fontName = "AmericanTypewriter-Bold"
             l.fontSize = 30
-            l.name = "m" + value.description
+            l.name = "movesHighscore"
             l.position = CGPoint(x: self.frame.midX - 135 / 2, y: self.frame.midY - CGFloat(index * 60))
             addChild(l)
         }
     }
     
-    func showBestTime() {
+    fileprivate func showBestTime() {
         for (index, value) in timePlaces.enumerated() {
             let l = SKLabelNode(text: value.description)
             l.fontColor = UIColor(red: 219/255, green: 226/255, blue: 215/255, alpha: 1.0)
             l.fontName = "AmericanTypewriter-Bold"
             l.fontSize = 30
+            l.name = "timeHighscore"
             l.position = CGPoint(x: self.frame.midX + 135 / 2, y: self.frame.midY - CGFloat(index * 60))
             addChild(l)
         }
@@ -60,16 +61,25 @@ class BestScene: ParentScene {
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         
-//        if node.name == "back" {
-//            let transition = SKTransition.crossFade(withDuration: 1.0)
-//            guard let backScene = backScene else { return }
-//            backScene.scaleMode = .aspectFill
-//            self.scene!.view?.presentScene(backScene, transition: transition)
-//        } else
-        if node.name == "moves" {
+        if node.name == "back" {
+            let transition = SKTransition.crossFade(withDuration: 0.5)
+            guard let backScene = backScene else { return }
+            backScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(backScene, transition: transition)
+        } else if node.name == "moves" {
             showBestMoves()
+            for _ in 0...2 {
+                if let timeNode = self.childNode(withName: "timeHighscore") {
+                    timeNode.removeFromParent()
+                }
+            }
         } else if node.name == "timer" {
             showBestTime()
+            for _ in 0...2 {
+                if let movesNode = self.childNode(withName: "movesHighscore") {
+                    movesNode.removeFromParent()
+                }
+            }
         }
     }
 

@@ -124,18 +124,12 @@ class GameScene: ParentScene {
     fileprivate func isEmptyCellAVailable(node: SKNode) -> Bool {
         guard let cell = getCellindex(node: node),
               let emptyCell = getEmptyCellIndex()
-        else {
-            print("GUARD not available")
-            return false
-        }
+        else { return false }
         if cell.0 == emptyCell.0 && abs(cell.1 - emptyCell.1) == 1 {
-            print("one row for cell: \(cell) and emptyCell: \(emptyCell)")
             return true
         } else if cell.1 == emptyCell.1 && abs(cell.0 - emptyCell.0) == 1 {
-            print("one col for: \(cell) and emptyCell: \(emptyCell)")
             return true
         } else {
-            print("not available: \(cell) and emptyCell: \(emptyCell)")
             return false
         }
     }
@@ -151,16 +145,15 @@ class GameScene: ParentScene {
     
 
     override func update(_ currentTime: TimeInterval) {
-       // if hud.moves == 3 {
+        //if hud.moves == 3 {
         if matrix == winMatrix {
             gameSettings.currentMove = hud.moves
             gameSettings.currentTime = hud.timer
             gameSettings.saveScores()
-            let bestScene = BestScene(size: self.size)
-            bestScene.backScene = self
-            let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
-            bestScene.scaleMode = .aspectFill
-            self.scene!.view?.presentScene(bestScene, transition: transition)
+            let winScene = WinScene(size: self.size)
+            let transition = SKTransition.doorsOpenHorizontal(withDuration: 1.0)
+            winScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(winScene, transition: transition)
         }
     }
 }

@@ -19,6 +19,8 @@
 		FB6010F5286CB0470094326A /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F4286CB0470094326A /* GameSettings.swift */; };
 		FB6010F7286CB31B0094326A /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6010F6286CB31B0094326A /* SceneManager.swift */; };
 		FB973EF6286B68810055A3E0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB973EF5286B68810055A3E0 /* HUD.swift */; };
+		FBF7A6AE286F07E600DDBADD /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7A6AD286F07E600DDBADD /* MenuScene.swift */; };
+		FBF7A6B0286F092B00DDBADD /* WinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7A6AF286F092B00DDBADD /* WinScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FB6010F4286CB0470094326A /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		FB6010F6286CB31B0094326A /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		FB973EF5286B68810055A3E0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		FBF7A6AD286F07E600DDBADD /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		FBF7A6AF286F092B00DDBADD /* WinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				FB6010F2286CB0170094326A /* ParentScene.swift */,
+				FBF7A6AD286F07E600DDBADD /* MenuScene.swift */,
 				FB02479E2869D9870095652C /* GameScene.swift */,
+				FBF7A6AF286F092B00DDBADD /* WinScene.swift */,
 				FB6010F0286CAFD00094326A /* BestScene.swift */,
 			);
 			path = Scenes;
@@ -190,9 +196,11 @@
 				FB973EF6286B68810055A3E0 /* HUD.swift in Sources */,
 				FB6010F7286CB31B0094326A /* SceneManager.swift in Sources */,
 				FB6010F5286CB0470094326A /* GameSettings.swift in Sources */,
+				FBF7A6B0286F092B00DDBADD /* WinScene.swift in Sources */,
 				FB02479F2869D9870095652C /* GameScene.swift in Sources */,
 				FB6010F3286CB0170094326A /* ParentScene.swift in Sources */,
 				FB0247A12869D9870095652C /* GameViewController.swift in Sources */,
+				FBF7A6AE286F07E600DDBADD /* MenuScene.swift in Sources */,
 				FB0247992869D9870095652C /* AppDelegate.swift in Sources */,
 				FB6010F1286CAFD00094326A /* BestScene.swift in Sources */,
 			);
