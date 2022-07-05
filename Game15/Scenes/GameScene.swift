@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: ParentScene {
     
+    fileprivate var backgroundMusic: SKAudioNode!
     fileprivate var selectedNode = SKNode()
     fileprivate var сellMatrix = [[CellNode]]()
     fileprivate let hud = HUD()
@@ -26,6 +27,17 @@ class GameScene: ParentScene {
                                  ["13","14","15",""]]
     
     override func didMove(to view: SKView) {
+        
+        gameSettings.loadGameSettings()
+        
+        if gameSettings.isMusic && backgroundMusic == nil {
+            if let musicURL = Bundle.main.url(forResource: "background_music", withExtension: "mp3") {
+                backgroundMusic = SKAudioNode(url: musicURL)
+                addChild(backgroundMusic)
+            }
+        } else if gameSettings.isMusic == false && backgroundMusic != nil {
+            backgroundMusic.removeFromParent()
+        }
         
         self.scene?.isPaused = false
         guard sceneManager.gameScene == nil else { return }
@@ -97,14 +109,13 @@ class GameScene: ParentScene {
         }
     }
     
-    fileprivate func populatePauseButton() {
-        
-    }
-    
     fileprivate func moveCell (cellIndex: (Int, Int), emptyIndex: (Int, Int)) {
         self.matrix[emptyIndex.0][emptyIndex.1] = matrix[cellIndex.0][cellIndex.1]
         self.matrix[cellIndex.0][cellIndex.1] = ""
         configureMatrix(matrix: matrix, yOffset: 72)
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("move_sound", waitForCompletion: false))
+        }
         hud.moves += 1
     }
     

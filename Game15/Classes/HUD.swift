@@ -20,10 +20,22 @@ class HUD: SKNode {
     
     let titleTimerLabel = SKLabelNode(text: "TIMER")
     let timerBackground = SKSpriteNode(color: .systemIndigo, size: CGSize(width: 100, height: 40))
-    let timerLabel = SKLabelNode(text: "0")
+    let timerLabel = SKLabelNode(text: "00:00")
     var timer: Int = 0 {
         didSet {
-            timerLabel.text = timer.description
+            let minutes = timer / 60
+            let seconds = timer % 60
+            var time = ""
+            if minutes < 10 && seconds < 10 {
+                time = "0\(minutes):0\(seconds)"
+            } else if minutes < 10 && seconds >= 10 {
+                time = "0\(minutes):\(seconds)"
+            } else if minutes >= 10 && seconds < 10 {
+                time = "\(minutes):0\(seconds)"
+            } else if minutes >= 10 && seconds >= 10 {
+                time = "\(minutes):\(seconds)"
+            }
+            timerLabel.text = time            
         }
     }
     

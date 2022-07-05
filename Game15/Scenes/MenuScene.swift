@@ -11,12 +11,12 @@ import SpriteKit
 class MenuScene: ParentScene {
     
     override func didMove(to view: SKView) {
-        setHeader(withName: "Game 15", color: .systemIndigo, size: CGSize(width: 120, height: 70))
+        setHeader(withName: "Game 15", size: CGSize(width: 200, height: 70))
         
-        let titles = ["play", "best"]
+        let titles = ["play", "options", "records"]
         for (index, title) in titles.enumerated() {
-            let button = CellNode(titled: title, backgroundColor: .systemIndigo, size: CGSize(width: 120, height: 70), fontSize: 30)
-            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
+            let button = CellNode(titled: title, backgroundColor: .systemIndigo, size: CGSize(width: 170, height: 60), fontSize: 25)
+            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 50 - CGFloat(90 * index))
             button.name = title
             button.label.name = title
             addChild(button)
@@ -33,7 +33,13 @@ class MenuScene: ParentScene {
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
-        } else if node.name == "best" {
+        } else if node.name == "options" {
+            let transition = SKTransition.crossFade(withDuration: 0.5)
+            let optionsScene = OptionsScene(size: self.size)
+            optionsScene.backScene = self
+            optionsScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(optionsScene, transition: transition)
+        } else if node.name == "records" {
             let transition = SKTransition.crossFade(withDuration: 0.5)
             let bestScene = BestScene(size: self.size)
             bestScene.backScene = self

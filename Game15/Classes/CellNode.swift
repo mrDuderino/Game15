@@ -33,6 +33,15 @@ class CellNode: SKSpriteNode {
         addChild(label)
     }
     
+    init(titled title: String?, backgroundName: String) {
+        let texture = SKTexture(imageNamed: backgroundName)
+        super.init(texture: texture, color: .clear, size: texture.size())
+        if let title = title {
+            label.text = title.uppercased()
+        }
+        addChild(label)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
